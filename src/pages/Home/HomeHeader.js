@@ -22,12 +22,12 @@ const Button = styled.button`
 `
 
 const DetailHeader = (props) => {
-  const history = useHistory();
+  const history = useHistory()
 
   return (
     <HeaderDiv>
       <Title>Pokelist</Title>
-      <Button onClick={() => history.push("/pokedex")}>Pokedex</Button>
+      <Button onClick={() => history.push(`/pokedex`)}>Pokedex</Button>
     </HeaderDiv>
   );
 };

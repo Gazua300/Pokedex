@@ -1,5 +1,8 @@
+import {useState} from 'react'
+import axios from 'axios'
 import Routes from "./Routes/Routes";
 import { createGlobalStyle } from "styled-components";
+import {BrowserRouter} from 'react-router-dom'
 
 const GlobalStyle = createGlobalStyle` 
   * {
@@ -10,11 +13,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const App = () => {
+  
   return (
-    <div>
-      <GlobalStyle />
-      <Routes />
-    </div>
-  );
-};
+      <BrowserRouter>
+        <GlobalStyle />
+        <Routes/>
+      </BrowserRouter>
+  )
+}
 export default App;
