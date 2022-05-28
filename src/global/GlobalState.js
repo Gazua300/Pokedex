@@ -7,9 +7,8 @@ import axios from 'axios'
 const GlobalState = (props)=>{
   const [pokemons, setPokemons] = useState([])
   const [pokeAdded, setPokeAdded] = useState([])
-  const [added, setAdded] = useState([])
 
-
+console.log(pokeAdded)
 
   const getPokemons = ()=>{
     axios.get('https://pokeapi.co/api/v2/pokemon').then(res=>{
@@ -23,15 +22,22 @@ const GlobalState = (props)=>{
   const addToPokedex = (url)=>{
     axios.get(url).then(res=>{
       
-      setPokeAdded([...pokeAdded, res.data])      
-    	alert(`${res.data.name} adicionado à pokedex`)
+      setPokeAdded([...pokeAdded, res.data])
       removeFromList(res.data.name)
-      
+
+      pokeAdded.map(added=>{
+        if(res.data.name === added.name){
+          alert(`${res.data.name} será duplicado na pokedex, pois já está adicionado!`)
+        }
+      })
+            
     }).catch(err=>{
     	alert('Algo deu errado!')
     })
+
   }
 
+  
 
   const removeFromList = (name)=>{
       const newPokemons = pokemons.filter(poke=>{

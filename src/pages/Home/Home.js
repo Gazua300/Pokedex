@@ -2,8 +2,6 @@ import PokeCard from "../../components/PokeCard"
 import HomeHeader from "./HomeHeader"
 import {useEffect, useContext} from "react"
 import Context from '../../global/Context'
-import styled from "styled-components"
-
 
 
 

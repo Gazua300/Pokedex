@@ -11,6 +11,12 @@ const Container = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr)
 `
+const TempTitle = styled.h2`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+`
 const Card = styled.div`
   display: inline;
   background-image: url(${pokeBall});
@@ -49,7 +55,7 @@ return (
   <>
     <PokedexHeader/>
     <Container>
-        {states.pokeAdded ? states.pokeAdded.map(poke=>{
+        {states.pokeAdded.length !== 0 ? states.pokeAdded.map(poke=>{
         	return<Card>
 				      <Picture src={poke.sprites.front_default} />
 				      <div>
@@ -61,7 +67,7 @@ return (
 				        </BtnName>
 				      </div>
 				    </Card>
-        }) : <h1>Sua pokedex está vazia</h1>}
+        }) : <TempTitle>Sua pokedex está vazia</TempTitle>}
     </Container>
   </>
   )

@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-
+  align-items: center;
+  justify-content: center;
   h3 {
     text-align: "center";
     font-size: "1.5rem";
